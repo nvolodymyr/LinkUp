@@ -13,7 +13,7 @@ class PostOneUser extends Component {
             likeOrDislike: true,
             comments:[],
             text:'',
-            imageStatus: 'loading',
+            imageStatus: 'loading...',
         }
         this.handleLike = this.handleLike.bind(this);
         this.handleDislake = this.handleDislake.bind(this);
