@@ -1,0 +1,28 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+    font-size: 30px;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid rgb(185, 184, 184);
+    padding-bottom: 20px;
+
+    .main-fotoaparat {
+        height: 50px;
+        width: 50px;
+        background-image: url(../fotoHeaderBar/no-translate-detected_318-76916.jpg);
+     
+        background-size: cover; 
+    }
+    .main-man{
+        height: 50px;
+        width: 50px;
+        background-image: url(../fotoHeaderBar/men.svg);
+        background-size: cover;
+    }
+
+}

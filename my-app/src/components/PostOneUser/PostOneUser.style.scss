@@ -1,0 +1,136 @@
+.main-post-one-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .main-avatar {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-top: 10px;
+        .avatar {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            border: 1px solid red;
+            border-radius: 50%;
+            padding: 2px;
+            margin-left: 425px;
+            img {
+                position: absolute;
+                top: 1px;
+                left: 1px;
+                width: 60px;
+                overflow: hidden;
+                border-radius: 50%;
+                margin-bottom: 4px;
+            }
+        }
+        .user-name {
+            width: 200px;
+            align-self: center;
+            font-family: sans-serif;
+            padding-left: 10px;
+        }
+        .crossElement {
+            display: block;
+            align-self: center;
+            // margin-left: 40%;
+            height: 20px;
+            width: 20px;
+            text-align: right;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .fa-times-circle {
+            color: gray;
+            &:hover {
+                color: rgb(236, 0, 0);
+            }
+        }
+    }
+    .main-image {
+        margin-bottom: 10px;
+        margin-top: 5px;
+        justify-content: center;
+        align-items: center;
+        height: 480px;
+        min-width: 640px;
+        position: relative;
+        .image {
+            position: absolute;
+            margin-left: 30%;
+            width: 640px;
+            height: 480px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            display: block;
+        }
+    }
+    .main-likes {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        margin-left: 23%;
+        height: 20px;
+        .heart {
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+            margin-left: 100px;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            margin-right: 10px;
+            background-repeat: no-repeat;
+            margin-bottom: 20px;
+            .likes-heart {
+                display: flex;
+                flex-direction: row;
+                font-family: sans-serif;
+                .likes-count {
+                    margin-left: 20px;
+                    padding-left: 20px;
+                    margin-left: 10px;
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                    font-size: 14px;
+                }
+            }
+            .fa-heart {
+                color: grey;
+            }
+        }
+        .main-send {
+            position: relative;
+            width: 31px;
+            height: 30px;
+            margin: 10px;
+            .send-img {
+                display: block;
+                position: absolute;
+                width: 130%;
+                height: auto;
+                margin-left: 20px;
+            }
+            .fa-paper-plane {
+                color: grey;
+            }
+        }
+    }
+}
+
+.todo-list-coments-form {
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 400px;
+    button {
+        margin-left: 10px;
+        width: 25px;
+        height: 26px;
+        border-radius: 3px;
+        &:focus {
+            background: rgb(184, 78, 78);
+        }
+    }
+}
