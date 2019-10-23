@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import { deleteElement } from '../../store/users/actions';
 import '../PostOneUser/PostOneUser.style.scss';
 import TodoListComents from '../TodoListComents/TodoListComents'
-// import SendImage from '../../style/send-icon-simple-260nw-1177677268.png'
 class PostOneUser extends Component {
     constructor(props) {
         super(props);
@@ -14,15 +13,16 @@ class PostOneUser extends Component {
             likeOrDislike: true,
             comments:[],
             text:'',
+            imageStatus: 'loading',
         }
         this.handleLike = this.handleLike.bind(this);
         this.handleDislake = this.handleDislake.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
         this.handleChange=this.handleChange.bind(this);
-    
-
-    }
+        this.handleImageLoaded=this.handleImageLoaded.bind(this);
+        this.handleImageErrored=this.handleImageErrored.bind(this);
+        }
 handleChange(e){
     this.setState({text:e.target.value});
 }
@@ -39,8 +39,18 @@ if(!this.state.text.length){
         comments:state.comments.concat(newItem),
         text:'',
     }))
-
 }
+handleImageLoaded(){
+        this.setState({imageStatus:''})
+    }
+    handleImageErrored(){
+        this.setState({imageStatus:'faild to dowload image'});
+        return (
+            <div>
+            
+            bla bla</div>
+        )
+    }
     handleLike() {
         this.setState((prevState, props) => ({
             likes: prevState.likes + 1,
@@ -72,12 +82,17 @@ console.log(this.props.id) }
                     </div>
                     <div className="user-name">{userName}</div>
                   <div><i className="crossElement fa fa-times-circle  fa-4x " title="destroy" onClick={this.handleRemove}></i></div>  
-
                                            </div>
                 <div className="main-image">
-                
-                <div className="image" style={{ backgroundImage: 'url(' + imageUrl + ')' }}></div>
-                        </div>
+                    <img className="image"
+                        alt=''
+                        src={imageUrl}
+                        onLoad={this.handleImageLoaded}
+                        onError={this.handleImageErrored}
+                    />
+                    {this.state.imageStatus}
+                    
+                </div>
               
                 <div className="main-likes">
                     {this.state.likeOrDislike ? (
